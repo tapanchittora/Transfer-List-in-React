@@ -11,7 +11,7 @@ export default class TransferList extends Component {
         list1: [],
         list2: []
     }
-
+//Calling json File for Data myjson.json file is availabe in public folder
     componentDidMount() {
         axios.get("./myjson.json").then(res => {
             this.setState({
@@ -24,6 +24,7 @@ export default class TransferList extends Component {
         });
     }
 
+  //Updateing Checked status on checkbox clicked
     handleChange = (e) => {
         let isBoxVisible = true;
         let value = parseInt(e.target.value);
@@ -40,18 +41,20 @@ export default class TransferList extends Component {
             }
             return (<div>Empty value</div>)
         })
-        //update list state
+        //update list state with checked true and false
         this.setState({
             list1: this.state.list1,
             list2: this.state.list2
         });
     }
 
+  //on Button click movement of row with getting direction from user
     handleMove = (direction) => {
         if (direction === 'left') {
             this.state.list1.map((result) => {
                 if (result.checked === true) {
                     this.state.list2.push(result);
+                    //updating the state with ramaining and new array.
                     this.setState({
                         list1: this.state.list1.filter(i => !i.checked),
                         list2: [...this.state.list2]
@@ -66,6 +69,7 @@ export default class TransferList extends Component {
                 this.state.list2.map((result) => {
                     if (result.checked === true) {
                         this.state.list1.push(result);
+                         //updating the state with ramaining and new array.
                         this.setState({
                             list1: [...this.state.list1],
                             list2: this.state.list2.filter(i => !i.checked)
@@ -76,10 +80,12 @@ export default class TransferList extends Component {
             }
         }
     }
+
+    //Row moved in once in Up and Down Direction 
     moveItems = (id, direction) => {
         const position = this.state.list2.findIndex((i) => i.id === id)
         if (position < 0) {
-            throw new Error("Given item not found.")
+            throw new Error("Id or direction is not found")
         } else if ((direction === upArrow && position === 0) || (direction === downArrow && position === this.state.list2.length - 1)) {
             return // canot move outside of array
         }
@@ -89,7 +95,7 @@ export default class TransferList extends Component {
         filterItems.splice(position + direction, 0, itemPosition)
         this.setState({ list2: filterItems })
     }
-
+//All data will update in array with one click
     moveAllData = (direction) => {
         if (direction === 'left') {
             this.setState({
@@ -104,7 +110,7 @@ export default class TransferList extends Component {
         }
     }
 
-
+//Render data
     render() {
         const LeftlistDisplay = this.state.list1.map(leftRes => {
             return (
@@ -129,6 +135,7 @@ export default class TransferList extends Component {
             )
         })
 
+//buttons and all html will rednder from here
         return (
             <div className="container">
                 <div className="left-side">{LeftlistDisplay}</div>
