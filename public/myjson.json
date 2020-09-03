@@ -1,0 +1,96 @@
+{
+	"itemList1": [{
+			"id": 1,
+			"text": "item1",
+			"checked": false
+		},
+		{
+			"id": 2,
+			"text": "item2",
+			"checked": false
+		},
+		{
+			"id": 3,
+			"text": "item3",
+			"checked": false
+		},
+		{
+			"id": 4,
+			"text": "item4",
+			"checked": false
+		},
+		{
+			"id": 5,
+			"text": "item5",
+			"checked": false
+		},
+		{
+			"id": 6,
+			"text": "item6",
+			"checked": false
+		},
+		{
+			"id": 7,
+			"text": "item7",
+			"checked": false
+		},
+		{
+			"id": 8,
+			"text": "item8",
+			"checked": false
+		},
+		{
+			"id": 9,
+			"text": "item9",
+			"checked": false
+		}
+
+	],
+	"itemList2": [{
+		"id": 11,
+		"text": "List2item1",
+		"checked": false
+	},
+	{
+		"id": 12,
+		"text": "List2item2",
+		"checked": false
+	},
+	{
+		"id": 13,
+		"text": "List2item3",
+		"checked": false
+	},
+	{
+		"id": 14,
+		"text": "List2item4",
+		"checked": false
+	},
+	{
+		"id": 15,
+		"text": "List2item5",
+		"checked": false
+	},
+	{
+		"id": 16,
+		"text": "List2item6",
+		"checked": false
+	},
+	{
+		"id": 17,
+		"text": "List2item7",
+		"checked": false
+	},
+	{
+		"id": 18,
+		"text": "List2item8",
+		"checked": false
+	},
+	{
+		"id": 19,
+		"text": "List2item9",
+		"checked": false
+	}
+
+]
+}

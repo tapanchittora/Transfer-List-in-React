@@ -1,0 +1,91 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 100%;
+}
+$bg_color : #f4f4f4;
+$block_BG : #aaa;
+$common_pad: 0.8rem;
+$common_mar:0.8em;
+$fontSize:1rem;
+$cursor: pointer;
+
+@mixin flexcenter{
+    display: grid;
+    place-content: center;
+}
+@mixin iconCenter{
+    display: flex;
+   align-items: center;
+//    justify-content: center;
+}
+@mixin overFlow {
+    height: 63vh;
+    overflow: auto;
+}
+a{ 
+    text-decoration:none;
+    color:#aaa; 
+   &:hover{
+       color:#000; 
+   } 
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    background-color:$block_BG;
+    padding:$common_pad;
+    font-size:$fontSize;
+    .left-side{
+        @include overFlow;
+        flex: 1;
+        background-color:$bg_color ;
+        padding:$common_pad;
+        text-transform: uppercase;
+    } 
+    .right-side{
+        @include overFlow;
+        flex: 1;
+        background-color:$bg_color ;
+        padding:$common_pad;
+        text-transform: uppercase;
+    } 
+    .subContainer{
+        // padding:$common_pad;
+        @include iconCenter;
+        border:1px solid #f9f9f9;
+        input{
+            margin:$common_mar;
+            cursor: $cursor;
+        }
+        .moveArrows {
+            width: 100%;
+            text-align: right;
+        }
+        
+    }
+    .buttons-container{
+        @include flexcenter;
+        margin:$common_mar;
+       button{
+           padding:$common_pad;
+           cursor: $cursor;
+       }
+      }
+      .fa-sort-up:before, 
+      .fa-sort-asc:before {
+        height: 8px;
+        float: left;
+        margin: 0px 5px;
+        font-size:20px;
+      }
+      .fa-sort-down:before, 
+      .fa-sort-desc:before{
+        font-size:20px;
+        margin-right: 15px;
+      }
+}
