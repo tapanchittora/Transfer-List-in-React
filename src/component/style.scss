@@ -23,7 +23,7 @@ $cursor: pointer;
 //    justify-content: center;
 }
 @mixin overFlow {
-    height: 63vh;
+    height: 400px;
     overflow: auto;
 }
 a{ 
@@ -87,5 +87,10 @@ a{
       .fa-sort-desc:before{
         font-size:20px;
         margin-right: 15px;
+      }
+      .error{
+        @include iconCenter;
+        justify-content: center;
+        color: #cc0000;
       }
 }

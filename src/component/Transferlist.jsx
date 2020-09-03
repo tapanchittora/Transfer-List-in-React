@@ -112,7 +112,7 @@ export default class TransferList extends Component {
 
 //Render data
     render() {
-        const LeftlistDisplay = this.state.list1.map(leftRes => {
+        const LeftlistDisplay = this.state.list1.length ? ( this.state.list1.map(leftRes => {
             return (
                 <div className="subContainer" key={leftRes.id} >
                     <input type="checkbox" checked={leftRes.checked} value={leftRes.id} className="fa fa-checkbox" onChange={this.handleChange} />
@@ -120,7 +120,11 @@ export default class TransferList extends Component {
                 </div>
             )
         })
-        const RightlistDisplay = this.state.list2.map(rightRes => {
+        ) : (
+            <div className="error">Empty Content Please enter Data</div>
+
+        )
+        const RightlistDisplay = this.state.list2.length ? (this.state.list2.map(rightRes => {
             return (
                 <div key={rightRes.id}>
                     <div className="subContainer" >
@@ -134,7 +138,10 @@ export default class TransferList extends Component {
                 </div>
             )
         })
+        ) : (
+            <div className="error">Empty Content Please enter Data</div>
 
+        )
 //buttons and all html will rednder from here
         return (
             <div className="container">
